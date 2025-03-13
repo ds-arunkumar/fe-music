@@ -6,7 +6,7 @@ import { RouterProvider } from "react-router-dom";
 const routes = [
   {
     path: "/",
-    element: <h1>Hello World!</h1>
+    element: <h1 className="text-3xl font-bold underline">Hello World!</h1>
   }
 ];
 
