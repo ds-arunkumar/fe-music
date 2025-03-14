@@ -1,12 +1,14 @@
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ToastProvider from "./components/ToastProvider";
 
 
 
 const routes = [
   {
     path: "/",
-    element: <h1 className="text-3xl font-bold underline">Hello World!</h1>
+    element: <HomePage/>
   }
 ];
 
@@ -21,12 +23,10 @@ const router = createBrowserRouter(routes, {
 })
 
 const App = () => {
-  return <RouterProvider 
-  router={router}
-  future={{
-    v7_startTransition: true,
-  }}
-  />
+  return <>
+  <ToastProvider />
+  <RouterProvider router={router}/>
+  </>
 }
 
 export default App;
