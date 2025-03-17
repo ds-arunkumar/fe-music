@@ -28,11 +28,7 @@ const getNavigation = (user) => {
   return []
 }
 
-const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'Register', href: '#', current: false },
-  { name: 'Login', href: '#', current: false },
-]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -65,7 +61,7 @@ function NavBar() {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                {navigation.map((item) => (
+                {getNavigation(user).map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
