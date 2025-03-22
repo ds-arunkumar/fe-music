@@ -7,6 +7,9 @@ import LoginPage from "./pages/LoginPage";
 import LayoutWrapper from "./wrappers/LayoutWrapper";
 import { Provider } from "react-redux";
 import store from "./redux/app/store";
+import DashboardWrapper from "./wrappers/DashboardWrapper";
+import authLoader from "./loaders/unit/authLoader";
+import Logout from "./components/Logout";
 
 
 
@@ -16,6 +19,8 @@ const routes = [
   {
     path: "/",
     element: <LayoutWrapper/>,
+    loader: authLoader,
+    hydrateFallbackElement: <p>Loading...</p>,
     children:[
     {
       index: true,
@@ -30,6 +35,19 @@ const routes = [
       element: <LoginPage/>
     }
   ]
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardWrapper/>,
+    loader: authLoader,
+    hydrateFallbackElement: <p>Loading...</p>,
+    children: [
+      {
+        path: "logout",
+        element: <Logout/>,
+        hydrateFallbackElement: <p>Please wait...</p>,
+      }
+    ]
   }
 ];
 

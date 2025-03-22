@@ -27,8 +27,8 @@ const LoginPage = () => {
         navigate("/dashboard");
       },500);
     })
-    .catch((err)=>{
-      toast.error(err.response.data.message);
+    .catch((error)=>{
+      toast.error(error.response.data.message);
     })
   }
 
