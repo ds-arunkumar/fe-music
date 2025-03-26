@@ -10,6 +10,10 @@ const DashboardWrapper = () => {
   if (!user){
     return <Navigate to="/login"/>
   }
+
+  if (user.user.role == 'admin'){
+    return <Navigate to="/admin/dashboard"/>
+  }
   return (
     <>
       <NavBar
