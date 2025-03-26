@@ -7,21 +7,21 @@ const Logout = () => {
 
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
    authServices.logout()
    .then((response)=>{
       toast.success(response.data.message);
 
       setTimeout(()=>{
         navigate('/login');
-      }, 500)
+      }, 500);
 
 
    }) 
     .catch((error)=>{
       toast.error(error.response.data.message);
     })
-  }, [])
+  },[navigate]);
   return (
     <div> Logging out...</div>
   )
