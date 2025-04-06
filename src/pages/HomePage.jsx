@@ -3,10 +3,10 @@ import NavBar from "../components/NavBar";
 
 const HomePage = () => {
   return (
-    <>
+    <div className="text-white pt-[5%]">
       <div className="container mt-5 text-center">
-        <h1 className="text-4xl text-gray-800">Welcome to Music!</h1>
-        <h4 className="text-xl text-gray-600">The best music platform</h4>
+        <h1 className="text-4xl">Welcome to Music!</h1>
+        <h4 className="text-xl">The best music platform</h4>
       
 
       <div className="max-w-2xl mx-auto mt-5 bg-white shadow-md rounded-md p-5 rounded-lg overflow-hidden border border-gray-200 ">
@@ -19,7 +19,7 @@ const HomePage = () => {
         </ul>
       </div>
     </div>
-    </>
+    </div>
   )
 }
 

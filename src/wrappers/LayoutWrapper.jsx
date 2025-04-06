@@ -1,6 +1,7 @@
 import { Navigate, Outlet, useLoaderData } from "react-router"
 import NavBar from "../components/NavBar"
 
+
 const LayoutWrapper = () =>{
 
   const user = useLoaderData();
@@ -12,6 +13,7 @@ const LayoutWrapper = () =>{
     <>
       <NavBar/>
       <Outlet/>
+          
     </>
   )
 }

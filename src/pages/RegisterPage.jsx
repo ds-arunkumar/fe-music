@@ -38,8 +38,8 @@ const RegisterPage = () =>{
   }
 
   return (
-    <div className="container mt-5 text-center">
-      <h1 className="text-4xl text-gray-800">Register</h1>
+    <div className="container mt-5 text-center pt-[5%]">
+      <h1 className="text-4xl text-white">Register</h1>
       <div className="max-w-md mx-auto mt-5 bg-white shadow-md rounded-md p-5 rounded-lg overflow-hidden border border-gray-200">
         <form onSubmit={handleRegister}>
           <div className="mb-4">

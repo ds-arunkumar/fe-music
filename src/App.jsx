@@ -19,6 +19,8 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 
 
 
+
+
 const routes = [
   {
     path: "/",
@@ -89,12 +91,14 @@ const router = createBrowserRouter(routes, {
 })
 
 const App = () => {
-  return <>
+  return <div className="h-screen bg-black">
     <Provider store={store}>
     <ToastProvider />
     <RouterProvider router={router}/>
+    
     </Provider>
-  </>
+    
+  </div>
 }
 
 export default App;
