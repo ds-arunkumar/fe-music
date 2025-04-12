@@ -2,11 +2,18 @@ import Sidebar from "./Sidebar"
 import { albumsData, songsData } from "../../assets/assets"
 import AlbumItem from "./AlbumItem"
 import SongItem from "./SongItem"
-import Player from "../../components/Player"
+
+import { useOutletContext } from "react-router"
 
 
 const UserDashboard = () => {
+  const { currentSongIndex, setCurrentSongIndex } = useOutletContext();
+
+
+
+ 
   return (
+    
     <div className="flex flex-col bg-black ">
       <div className="flex flex-row">
         <Sidebar/>
@@ -19,7 +26,7 @@ const UserDashboard = () => {
                 key={index} 
                 name={item.name} 
                 desc={item.desc} 
-                id={item._id} 
+                id={item.id} 
                 image={item.image}
               />))}
           </div>
@@ -27,14 +34,23 @@ const UserDashboard = () => {
           <div className='mb-1 text-white'>
           <h1 className='my-1 font-bold text-2xl text-white'>Today's biggest hits</h1>
           <div className='flex overflow-auto'>
-            {songsData.map((item,index)=>(<SongItem key={index} name={item.name} desc={item.desc} id={item._id} image={item.image}/>))}
+            {songsData.map((item,index)=>(
+              <div 
+                key={index}
+                onClick={()=> setCurrentSongIndex(index)}
+                className="cursor-pointer"
+              >
+                <SongItem key={index} name={item.name} desc={item.desc} id={item.id} image={item.image}/>
+              </div>
+              ))}
           </div>
         </div>
         </div>
 
         </div>
       </div>
-      <Player/>
+      
+      
     </div>
     
   )

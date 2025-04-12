@@ -1,7 +1,7 @@
 const AdminDashboard = () => {
   return (
-    <div>
-      <h1 className="text-center text-3xl font-semibold text-gray-800">Admin Dashboard</h1>
+    <div className="text-center text-3xl font-semibold text-white pt-[6%]">
+      Admin Dashboard
     </div>
   )
 }
