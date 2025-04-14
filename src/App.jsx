@@ -14,6 +14,8 @@ import AdminWrapper from "./wrappers/AdminWrapper";
 import UserDashboard from "./pages/user/UserDashboard";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import DisplayAlbum from "./pages/user/DisplayAlbum";
+import CreatePlaylist from "./pages/user/CreatePlaylist";
+import DisplayPlaylist from "./pages/user/DisplayPlaylist";
 
 
 
@@ -61,7 +63,17 @@ const routes = [
       {
         path: "/dashboard/album/:id",
         element:<DisplayAlbum/>,
-        hydrateFallbackElement: <p>Loading Album...</p>
+        hydrateFallbackElement: <p>Loading Album...</p>,
+      },
+      {
+        path: "/dashboard/createplaylist",
+        element: <CreatePlaylist/>,
+        hydrateFallbackElement: <p>Loading Creat Playlist...</p>
+      },
+      {
+        path: "/dashboard/playlist/:id",
+        element: <DisplayPlaylist />,
+        hydrateFallbackElement: <p>Loading Playlist...</p>,
       }
     ]
   },
